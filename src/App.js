@@ -35,13 +35,15 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <div className='control'>
-          <Option />
+        <div className="btn-option"></div>
           <Month thisMonth={monthNames[this.state.thisMonth]} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} />
           <Search />
         </div>
-
-        <div className='calendar'>
-          <Calendar weekdays={weekdays} daysInMonth={daysInMonth} />
+        <div className='main-content'>
+          <Option />
+          <div className='calendar'>
+            <Calendar weekdays={weekdays} daysInMonth={daysInMonth} />
+          </div>
         </div>
       </div>
     )

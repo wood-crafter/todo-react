@@ -24,7 +24,7 @@ export default class Calendar extends React.Component {
                 {dayInMonth + 1}
               </div>
             )
-          })}
+        })}
         </div>
       </div>
     )
