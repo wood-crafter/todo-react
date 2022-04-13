@@ -4,6 +4,7 @@ import Option from './Options';
 import Month from './Month';
 import Search from './Search';
 import Calendar from './Calendar';
+import Detail from './Detail';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,8 +42,9 @@ export default class App extends React.Component {
         </div>
         <div className='main-content'>
           <Option />
-          <div className='calendar'>
-            <Calendar weekdays={weekdays} daysInMonth={daysInMonth} />
+          <div className='content'>
+            <Calendar weekdays={weekdays} daysInMonth={daysInMonth} class='calendar'/>
+            <Detail class="detail"/>
           </div>
         </div>
       </div>
