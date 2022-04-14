@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 100vh;
   align-items: center;
+  color: white;
 }
 
 .App-logo {
@@ -72,6 +73,8 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  align-items: center;
+  height: 100%;
 }
 .Search {
   width: 3rem;
@@ -100,6 +103,7 @@
 .weekdays {
   display: flex;
   flex-direction: row;
+  color: black;
 }
 .weekday {
   flex: 14.28%;
@@ -117,6 +121,27 @@
   flex: 0 0 14.28%;
   box-sizing: border-box;
 }
+.round {
+  color: white;
+  background-color: #1c3e69;
+  font-size: xx-large;
+  border: 0;
+  width: 2rem;
+  height: 100%;
+}
+.round:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.month-name {
+  font-size: xx-large;
+}
+
+.days-in-month > *:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 .days-in-month :nth-child(1) {
   background-color: #f3b56b;
 }
