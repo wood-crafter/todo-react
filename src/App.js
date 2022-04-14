@@ -10,8 +10,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      thisYear: new Date().getFullYear(),
-      thisMonth: new Date().getMonth(),
+      year: new Date().getFullYear(),
+      month: new Date().getMonth(),
     };
 
     this.handlePreviousMonth = this.handlePreviousMonth.bind(this);
@@ -19,25 +19,24 @@ export default class App extends React.Component {
   }
 
   handlePreviousMonth() {
-    if(this.state.thisMonth === 0) return
-    this.setState({ thisMonth: this.state.thisMonth - 1 })
+    if(this.state.month === 0) return
+    this.setState({ month: this.state.month - 1 })
   }
 
   handleNextMonth() {
-    if(this.state.thisMonth === 11) return
-    this.setState({ thisMonth: this.state.thisMonth + 1 })
+    if(this.state.month === 11) return
+    this.setState({ month: this.state.month + 1 })
   }
 
   render() {
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     const weekdays = ["Mon", "Tue", "Wed", "Thus", "Fri", "Sat", "Sun"]
-    const daysInMonth = new Date(this.state.thisYear, this.state.thisMonth + 1, 0).getDate();
+    const daysInMonth = new Date(this.state.year, this.state.month + 1, 0).getDate();
 
     return (
       <div className="App">
         <div className='control'>
         <div className="btn-option"></div>
-          <Month thisMonth={monthNames[this.state.thisMonth]} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} />
+          <Month month={this.state.month} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} />
           <Search />
         </div>
         <div className='main-content'>
