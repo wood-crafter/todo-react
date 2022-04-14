@@ -11,7 +11,7 @@ export default class Calendar extends React.Component {
         <div className="weekdays">
           {weekdays.map((weekday) => {
             return (
-              <div className='weekday'>
+              <div className='weekday' key={weekday}>
                 {weekday}
               </div>
             )
@@ -19,16 +19,16 @@ export default class Calendar extends React.Component {
         </div>
 
         <div className='days-in-month'>
-          {gridArray.map((dayInMonth) => {
-            if (daysInMonth.includes(dayInMonth)) {
+          {gridArray.map((value) => {
+            if (daysInMonth.includes(value)) {
               return (
-                <div className='day-in-month'>
-                  {dayInMonth + 1}
+                <div className='day-in-month' key={value}>
+                  {value + 1}
                 </div>
               )
             } else {
               return (
-                <div className='day-in-month'>
+                <div className='day-in-month' key={value}>
                 </div>
               )
             }

@@ -37,6 +37,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -68,6 +69,7 @@
   background-image: url("../public/menu-icon.jpg");
   background-size: contain;
 }
+
 .Month {
   width: 100%;
   display: flex;
@@ -76,19 +78,23 @@
   align-items: center;
   height: 100%;
 }
+
 .Search {
   width: 3rem;
   height: 3rem;
   background-image: url("../public/search-icon.jpg");
   background-size: contain;
 }
+
 .Option {
   flex: 15%;
 }
+
 .Calendar {
   height: 50%;
-  width: 90%;
+  width: 75%;
 }
+
 .content {
   flex: 85%;
   width: 50%;
@@ -97,30 +103,45 @@
   display: flex;
   flex-direction: column;
 }
+
 .Detail {
   height: 50%;
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
+
 .weekdays {
+  height: 10%;
   display: flex;
   flex-direction: row;
   color: black;
 }
+
 .weekday {
   flex: 14.28%;
   padding-top: 1rem;
   padding-bottom: 1.5rem;
 }
+
 .days-in-month {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 90%;
 }
+
 .day-in-month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
   flex: 0 0 14.28%;
   box-sizing: border-box;
 }
+
 .round {
   color: white;
   background-color: #1c3e69;
@@ -129,15 +150,17 @@
   width: 2rem;
   height: 100%;
 }
+
 .round:hover {
   opacity: 0.6;
   cursor: pointer;
 }
+
 .month-name {
   font-size: xx-large;
 }
 
-.days-in-month > *:hover {
+.days-in-month>*:hover {
   opacity: 0.6;
   cursor: pointer;
 }
@@ -145,105 +168,139 @@
 .days-in-month :nth-child(1) {
   background-color: #f3b56b;
 }
+
 .days-in-month :nth-child(2) {
   background-color: #f0a76b;
 }
+
 .days-in-month :nth-child(3) {
   background-color: #ee996b;
 }
+
 .days-in-month :nth-child(4) {
   background-color: #eb8b6b;
 }
+
 .days-in-month :nth-child(5) {
   background-color: #e87b6b;
 }
+
 .days-in-month :nth-child(6) {
   background-color: #e3636b;
 }
+
 .days-in-month :nth-child(7) {
   background-color: #e25b6b;
 }
+
 .days-in-month :nth-child(8) {
   background-color: #df4e6b;
 }
+
 .days-in-month :nth-child(9) {
   background-color: #dc446c;
 }
+
 .days-in-month :nth-child(10) {
   background-color: #d93a6c;
 }
+
 .days-in-month :nth-child(11) {
   background-color: #d6306d;
 }
+
 .days-in-month :nth-child(12) {
   background-color: #c72f6c;
 }
+
 .days-in-month :nth-child(13) {
   background-color: #b92e6a;
 }
+
 .days-in-month :nth-child(14) {
   background-color: #aa2d69;
 }
+
 .days-in-month :nth-child(15) {
   background-color: #9c2c68;
 }
+
 .days-in-month :nth-child(16) {
   background-color: #8e2b67;
 }
+
 .days-in-month :nth-child(17) {
   background-color: #802b66;
 }
+
 .days-in-month :nth-child(18) {
   background-color: #722a65;
 }
+
 .days-in-month :nth-child(19) {
   background-color: #642964;
 }
+
 .days-in-month :nth-child(20) {
   background-color: #572863;
 }
+
 .days-in-month :nth-child(21) {
   background-color: #492762;
 }
+
 .days-in-month :nth-child(22) {
   background-color: #3b2661;
 }
+
 .days-in-month :nth-child(23) {
   background-color: #2d2660;
 }
+
 .days-in-month :nth-child(24) {
   background-color: #20255e;
 }
+
 .days-in-month :nth-child(25) {
   background-color: #12255d;
 }
+
 .days-in-month :nth-child(26) {
   background-color: #183464;
 }
+
 .days-in-month :nth-child(27) {
   background-color: #1e446b;
 }
+
 .days-in-month :nth-child(28) {
   background-color: #245372;
 }
+
 .days-in-month :nth-child(29) {
   background-color: #275b75;
 }
+
 .days-in-month :nth-child(30) {
   background-color: #2d6a7b;
 }
+
 .days-in-month :nth-child(31) {
   background-color: #337a82;
 }
+
 .days-in-month :nth-child(32) {
   background-color: #398988;
 }
+
 .days-in-month :nth-child(33) {
   background-color: #45a895;
 }
+
 .days-in-month :nth-child(34) {
   background-color: #4cb69a;
 }
+
 .days-in-month :nth-child(35) {
   background-color: #52c6a2;
 }
@@ -251,21 +308,50 @@
 .weekdays :nth-child(1) {
   background-color: #fae56b;
 }
+
 .weekdays :nth-child(2) {
   background-color: #f9de6b;
 }
+
 .weekdays :nth-child(3) {
   background-color: #f8d76b;
 }
+
 .weekdays :nth-child(4) {
   background-color: #f7d16b;
 }
+
 .weekdays :nth-child(5) {
   background-color: #f6ca6b;
 }
+
 .weekdays :nth-child(6) {
   background-color: #f5c36b;
 }
+
 .weekdays :nth-child(7) {
   background-color: #f4bc6b;
+}
+
+.Schedule {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.schedule-time {
+  flex: 1;
+}
+.schedule-event {
+  flex: 5;
+}
+.schedule-processing {
+  flex: 1;
+}
+.schedule-note {
+  flex: 3;
+}
+
+.TodoDetail {
+  flex: 0 0 50%;
 }

@@ -4,7 +4,7 @@ import Option from './Options';
 import Month from './Month';
 import Search from './Search';
 import Calendar from './Calendar';
-import Detail from './Detail';
+import Detail from './detail/Detail';
 
 export default class App extends React.Component {
   constructor(props) {
