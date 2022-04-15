@@ -91,9 +91,15 @@
 }
 
 .Calendar {
-  height: 25rem;
-  margin: 1rem;
-  width: 75%;
+  display: none;
+  height: 18rem;
+  width: 35%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center
 }
 
 .content {
@@ -132,7 +138,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 22rem;
+  height: 15rem;
 }
 
 .day-in-month {
@@ -141,7 +147,7 @@
   justify-content: center;
   flex: 0 0 14.28%;
   box-sizing: border-box;
-  height: 4.4rem;
+  height: 3rem;
 }
 
 .round {
