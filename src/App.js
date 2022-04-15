@@ -3,7 +3,6 @@ import React from "react";
 import Option from './Options';
 import Month from './Month';
 import Search from './Search';
-import Calendar from './Calendar';
 import Detail from './detail/Detail';
 
 export default class App extends React.Component {
@@ -29,20 +28,18 @@ export default class App extends React.Component {
   }
 
   render() {
-    const weekdays = ["Mon", "Tue", "Wed", "Thus", "Fri", "Sat", "Sun"]
     const daysInMonth = new Date(this.state.year, this.state.month + 1, 0).getDate();
 
     return (
       <div className="App">
         <div className='control'>
         <div className="btn-option"></div>
-          <Month month={this.state.month} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} />
+          <Month month={this.state.month} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} daysInMonth={daysInMonth} />
           <Search />
         </div>
         <div className='main-content'>
           <Option />
           <div className='content'>
-            <Calendar weekdays={weekdays} daysInMonth={daysInMonth} class='calendar'/>
             <Detail class="detail"/>
           </div>
         </div>
