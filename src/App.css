@@ -62,6 +62,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   background-image: linear-gradient(to bottom right, #4effdf, #f37fc7);
+  max-height: calc(100vh - 4rem);
 }
 
 .btn-option {
@@ -92,9 +93,10 @@
   background-size: contain;
 }
 
-.Option {
+.Option { 
   flex: 1;
   display: flex;
+  max-height: calc(100vh - 4rem);
 }
 
 .Calendar {
@@ -117,6 +119,7 @@
   opacity: 0.9;
   display: flex;
   flex-direction: column;
+  max-height: calc(100vh - 4rem);
 }
 
 .Detail {
@@ -125,7 +128,7 @@
   flex-direction: column;
   flex-grow: 1;
   color: black;
-  margin-top: 1rem;
+  max-height: 100%;
 }
 
 .weekdays {
@@ -354,6 +357,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  max-height: 100%;
 }
 .schedule-time {
   height: fit-content;
@@ -362,7 +366,7 @@
   flex-direction: column;
 }
 .schedule-time >* {
-  border-top: 0.1rem solid gray;
+  border-bottom: 0.1rem solid rgb(167, 167, 167);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -374,7 +378,7 @@
   flex-direction: column;
 }
 .schedule-event >* {
-  border-top: 0.1rem solid gray;
+  border-bottom: 0.1rem solid rgb(167, 167, 167);
   display: flex;
   align-items: center;
   justify-content: center;
