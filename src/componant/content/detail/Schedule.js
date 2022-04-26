@@ -1,4 +1,5 @@
 import '../../../App.css';
+import TodoDetail from './Todo-detail';
 import React from "react";
 
 export default class Schedule extends React.Component {
@@ -27,8 +28,7 @@ export default class Schedule extends React.Component {
           </div>
         </div>
 
-        <div className='todo-detail'>
-        </div>
+        <TodoDetail/>
       </div>
     )
   }
