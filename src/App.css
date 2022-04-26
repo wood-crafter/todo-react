@@ -387,3 +387,6 @@
   flex: 3;
   display: flex;
 }
+.form-check-label {
+  color: black;
+}
