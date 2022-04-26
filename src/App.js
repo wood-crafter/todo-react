@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import Option from './Options';
+import Option from './componant/content/Options';
 import Month from './componant/navbar/Month';
 import Search from './componant/navbar/Search';
 import Detail from './detail/Detail';
