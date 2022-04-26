@@ -22,7 +22,7 @@ export default class Calendar extends React.Component {
           {gridArray.map((value) => {
             if (daysInMonth.includes(value)) {
               return (
-                <div className='day-in-month' key={value}>
+                <div className='day-in-month' key={value} onClick={() => console.info(this.props.todos)}>
                   {value + 1}
                 </div>
               )

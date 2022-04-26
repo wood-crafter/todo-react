@@ -11,6 +11,11 @@ export default class App extends React.Component {
     this.state = {
       year: new Date().getFullYear(),
       month: new Date().getMonth(),
+      todos: new Map().set(new Date(2022, 4, 26, 9, 0, 0, 0), {
+        title: 'This is first todo',
+        description: 'This is description content',
+        processing: 10,
+      }),
     };
 
     this.handlePreviousMonth = this.handlePreviousMonth.bind(this);
@@ -34,7 +39,7 @@ export default class App extends React.Component {
       <div className="App">
         <div className='control'>
         <div className="btn-option"></div>
-          <Month month={this.state.month} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} daysInMonth={daysInMonth} />
+          <Month month={this.state.month} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} daysInMonth={daysInMonth} todos={this.state.todos}/>
           <Search />
         </div>
         <div className='main-content'>
