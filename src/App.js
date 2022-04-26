@@ -3,7 +3,7 @@ import React from "react";
 import Option from './componant/content/Options';
 import Month from './componant/navbar/Month';
 import Search from './componant/navbar/Search';
-import Detail from './detail/Detail';
+import Detail from './componant/content/detail/Detail';
 
 export default class App extends React.Component {
   constructor(props) {

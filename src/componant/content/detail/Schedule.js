@@ -1,4 +1,4 @@
-import '../App.css';
+import '../../../App.css';
 import React from "react";
 
 export default class Schedule extends React.Component {
