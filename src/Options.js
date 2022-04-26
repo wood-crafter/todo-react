@@ -6,10 +6,17 @@ export default class Option extends React.Component {
     return (
       <div className="Option">
         <div className='visibility'>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id='username' />
-            <label class="form-check-label" for="username">
+          <div className="form-check">
+            <input className="form-check-input" type="checkbox" id='username' />
+            <label className="form-check-label" htmlFor="username">
               This is first checkbox
+            </label>
+          </div>
+
+          <div className="form-check">
+            <input className="form-check-input" type="checkbox" id='event' />
+            <label className="form-check-label" htmlFor="event">
+              Event
             </label>
           </div>
         </div>

@@ -1,8 +1,8 @@
 import './App.css';
 import React from "react";
 import Option from './Options';
-import Month from './Month';
-import Search from './Search';
+import Month from './componant/navbar/Month';
+import Search from './componant/navbar/Search';
 import Detail from './detail/Detail';
 
 export default class App extends React.Component {
@@ -11,7 +11,7 @@ export default class App extends React.Component {
     this.state = {
       year: new Date().getFullYear(),
       month: new Date().getMonth(),
-      todos: new Map().set(new Date(2022, 4, 26, 9, 0, 0, 0), {
+      todos: new Map().set(new Date(2022, 4, 26, 9, 0, 0, 0).getTime(), {
         title: 'This is first todo',
         description: 'This is description content',
         processing: 10,
@@ -45,7 +45,7 @@ export default class App extends React.Component {
         <div className='main-content'>
           <Option />
           <div className='content'>
-            <Detail class="detail"/>
+            <Detail className="detail"/>
           </div>
         </div>
       </div>
