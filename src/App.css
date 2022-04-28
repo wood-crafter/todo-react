@@ -122,15 +122,6 @@
   max-height: calc(100vh - 4rem);
 }
 
-.Detail {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  flex-grow: 1;
-  color: black;
-  max-height: 100%;
-}
-
 .weekdays {
   height: 3rem;
   display: flex;
@@ -357,6 +348,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  color: black;
   max-height: 100%;
 }
 .schedule-time {
@@ -385,7 +377,7 @@
 }
 .timer {
   display: flex;
-  flex: 7;
+  flex: 6;
 }
 .todo-detail {
   margin-top: 1rem;
@@ -402,6 +394,10 @@
   background: rgba(0, 0, 0, 0);
   border: 1px solid rgb(172, 63, 63);
 }
+.form-control:focus {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(172, 63, 63);
+}
 .todo-detail-date {
   margin-top: 1rem;
   display: flex;
@@ -414,14 +410,22 @@
   margin-left: 1rem;
   margin-right: 1rem;
 }
-/* .todo-detail-title {
-  width: 30rem;
-} */
 .todo-detail-title > input {
   border: 0;
   border-bottom: 1px solid rgb(172, 63, 63);
   border-radius: 0;
 }
 .todo-detail-title > input:focus {
+  background: rgba(0, 0, 0, 0);
+}
+.description {
+  flex-grow: 1;
+  display: flex;
+  margin-bottom: 0.2rem;
+}
+.description > input {
+  flex-grow: 1;
+}
+.description > textarea:focus {
   background: rgba(0, 0, 0, 0);
 }

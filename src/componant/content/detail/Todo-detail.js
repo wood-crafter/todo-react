@@ -10,7 +10,10 @@ export default class TodoDetail extends React.Component {
         </div>
         <div className='todo-detail-date'>
           <label for="Date">Date:</label>
-          <input type="date" id="date" name="Date" className='form-control'/>
+          <input type="date" id="date" name="Date" className='form-control' />
+        </div>
+        <div className='description'>
+          <textarea className='form-control' placeholder='Description' />
         </div>
       </div>
     )

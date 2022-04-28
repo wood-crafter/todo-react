@@ -28,7 +28,7 @@ export default class Schedule extends React.Component {
           </div>
         </div>
 
-        <TodoDetail/>
+        <TodoDetail onAdd={this.props.makeTodoDetailHandler} onUpdate={this.props.makeTodoDetailHandler} />
       </div>
     )
   }
