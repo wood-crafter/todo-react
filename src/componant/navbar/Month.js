@@ -11,7 +11,7 @@ export default class Month extends React.Component {
         <button className='previous round' onClick={this.props.onPrevious} >{'<'}</button>
         <div className='month-name'>{monthNames[this.props.month]}</div>
         <button className='next round' onClick={this.props.onNext}>{'>'}</button>
-        <Calendar weekdays={weekdays} daysInMonth={this.props.daysInMonth} todos={this.props.todos} class='calendar'/>
+        <Calendar weekdays={weekdays} daysInMonth={this.props.daysInMonth} todos={this.props.todos} class='calendar' handleDayInMonthClick={this.props.handleDayInMonthClick}/>
       </div>
     )
   }

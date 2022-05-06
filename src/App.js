@@ -20,6 +20,7 @@ export default class App extends React.Component {
     this.handlePreviousMonth = this.handlePreviousMonth.bind(this);
     this.handleNextMonth = this.handleNextMonth.bind(this);
     this.makeTodoDetailHandler = this.makeTodoDetailHandler.bind(this)
+    this.handleDayInMonthClicked = this.handleDayInMonthClicked.bind(this)
   }
 
   handlePreviousMonth() {
@@ -58,6 +59,19 @@ export default class App extends React.Component {
     })
   }
 
+  handleDayInMonthClicked(date) {
+    const currentDayTodos = new Map(this.state.todos)
+    currentDayTodos.forEach((_, key) => {
+      if ((key > new Date(this.state.year, this.state.month, date, 23, 0, 0, 0).getTime())) {
+        currentDayTodos.delete(key)
+      }
+      if ((key < new Date(this.state.year, this.state.month, date, 0, 0, 0, 0).getTime())) {
+        currentDayTodos.delete(key)
+      }
+    })
+    console.info(currentDayTodos)
+  }
+
   addTodoParamsRequireErrorPopup(type) {
     console.info('No time input:', type)
   }
@@ -69,7 +83,7 @@ export default class App extends React.Component {
       <div className="App">
         <div className='control'>
           <div className="btn-option"></div>
-          <Month month={this.state.month} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} daysInMonth={daysInMonth} todos={this.state.todos} />
+          <Month month={this.state.month} handleDayInMonthClick={this.handleDayInMonthClicked} onPrevious={this.handlePreviousMonth} onNext={this.handleNextMonth} daysInMonth={daysInMonth} todos={this.state.todos} />
           <Search />
         </div>
         <div className='main-content'>
