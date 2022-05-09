@@ -15,6 +15,7 @@ export default class App extends React.Component {
         title: 'This is first todo',
         description: 'This is description content',
       }),
+      currentDayTodos: new Map(),
     };
 
     this.handlePreviousMonth = this.handlePreviousMonth.bind(this);
@@ -60,7 +61,7 @@ export default class App extends React.Component {
   }
 
   handleDayInMonthClicked(date) {
-    const currentDayTodos = new Map(this.state.todos)
+    const currentDayTodos = this.state.todos
     currentDayTodos.forEach((_, key) => {
       if ((key > new Date(this.state.year, this.state.month, date, 23, 0, 0, 0).getTime())) {
         currentDayTodos.delete(key)
@@ -69,7 +70,9 @@ export default class App extends React.Component {
         currentDayTodos.delete(key)
       }
     })
-    console.info(currentDayTodos)
+    this.setState({
+      currentDayTodos: currentDayTodos
+    })
   }
 
   addTodoParamsRequireErrorPopup(type) {
@@ -89,7 +92,7 @@ export default class App extends React.Component {
         <div className='main-content'>
           <Option />
           <div className='content'>
-            <Schedule onAdd={this.makeTodoDetailHandler} onUpdate={this.makeTodoDetailHandler} className="detail" />
+            <Schedule onAdd={this.makeTodoDetailHandler} onUpdate={this.makeTodoDetailHandler} className="detail" currentDayTodos={this.state.currentDayTodos}/>
           </div>
         </div>
       </div>
