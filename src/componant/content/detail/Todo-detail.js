@@ -9,6 +9,14 @@ export default class TodoDetail extends React.Component {
       description: this.props.currentEvent.description,
     };
   }
+  componentDidUpdate(preProp) {
+    if(preProp.title !== this.props.title) {
+      this.setState({
+        title: this.props.currentEvent.title,
+        description: this.props.currentEvent.description,
+      })
+    }
+  }
   render() {
     return (
       <div className='todo-detail'>
