@@ -9,12 +9,6 @@ export default class TodoDetail extends React.Component {
       description: this.props.currentEvent.description,
     };
   }
-  onTitleChange(e) {
-    this.setState({ title: e.target.value })
-  }
-  onDescriptionChange(e) {
-    this.setState({ description: e.target.value })
-  }
   render() {
     return (
       <div className='todo-detail'>
@@ -24,10 +18,10 @@ export default class TodoDetail extends React.Component {
           }}>Apply</button>
         </div>
         <div className='todo-detail-title'>
-          <input type='text' className='form-control' placeholder='Title' value={this.state.title} onTitleChange={this.handleChange}/>
+          <input type='text' className='form-control' placeholder='Title' value={this.state.title} onChange={(e) => this.setState({ title: e.target.value })}/>
         </div>
         <div className='description'>
-          <textarea className='form-control' placeholder='Description' value={this.state.description} onDescriptionChange={this.handleChange}/>
+          <textarea className='form-control' placeholder='Description' value={this.state.description} onChange={(e) => this.setState({ description: e.target.value })} />
         </div>
       </div>
     )
