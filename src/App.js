@@ -11,17 +11,24 @@ export default class App extends React.Component {
     this.state = {
       year: new Date().getFullYear(),
       month: new Date().getMonth(),
+      day: null,
       todos: new Map().set(new Date(2022, 4, 26, 9, 0, 0, 0).getTime(), {
         title: 'This is first todo',
         description: 'This is description content',
       }),
       currentDayTodos: new Map(),
+      currentMileStone: '',
+      currentEvent: {
+        title: '',
+        description: '',
+      },
     };
 
     this.handlePreviousMonth = this.handlePreviousMonth.bind(this);
     this.handleNextMonth = this.handleNextMonth.bind(this);
     this.makeTodoDetailHandler = this.makeTodoDetailHandler.bind(this)
     this.handleDayInMonthClicked = this.handleDayInMonthClicked.bind(this)
+    this.handleEventDoubleClick = this.handleEventDoubleClick.bind(this)
   }
 
   handlePreviousMonth() {
@@ -50,13 +57,20 @@ export default class App extends React.Component {
     // check existed time-todos
     const oldTodos = this.state.todos
     const todoDate = new Date(date)
-    todoDate.setHours(todoDate.getHours() + 4)
+    todoDate.setHours(todoDate.getHours())
 
     this.state.setState({
       todos: oldTodos.set(todoDate.getTime(), {
         title: title,
         description: description,
       })
+    })
+  }
+
+  handleEventDoubleClick(milestone, currentEvent) {
+    this.setState({
+      currentMileStone: milestone,
+      currentEvent: currentEvent
     })
   }
 
@@ -71,7 +85,8 @@ export default class App extends React.Component {
       }
     })
     this.setState({
-      currentDayTodos: currentDayTodos
+      currentDayTodos: currentDayTodos,
+      day: date,
     })
   }
 
@@ -92,7 +107,7 @@ export default class App extends React.Component {
         <div className='main-content'>
           <Option />
           <div className='content'>
-            <Schedule onAdd={this.makeTodoDetailHandler} onUpdate={this.makeTodoDetailHandler} className="detail" currentDayTodos={this.state.currentDayTodos}/>
+            <Schedule currentMileStone={this.state.currentMileStone} currentEvent={this.state.currentEvent} onEventDoubleClicked={this.handleEventDoubleClick} onApply={this.makeTodoDetailHandler} className="detail" currentDayTodos={this.state.currentDayTodos} month={this.state.month} year={this.state.year} date={this.state.date}/>
           </div>
         </div>
       </div>
