@@ -9,8 +9,8 @@ export default class TodoDetail extends React.Component {
       description: this.props.currentEvent.description,
     };
   }
-  componentDidUpdate(preProp) {
-    if(preProp.title !== this.props.title) {
+  componentDidUpdate(prevProp ) {
+    if(prevProp.currentEvent.title !== this.props.currentEvent.title || prevProp.currentEvent.description !== this.props.currentEvent.description) {
       this.setState({
         title: this.props.currentEvent.title,
         description: this.props.currentEvent.description,
